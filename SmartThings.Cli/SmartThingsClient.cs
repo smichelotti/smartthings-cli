@@ -20,7 +20,7 @@ namespace SmartThings.Cli
         {
             var json = await this.http.GetStringAsync($"devices/{deviceId}/status");
             dynamic response = JObject.Parse(json);
-            string status = response.components.main.light.@switch.value;
+            string status = response.components.main.@switch.@switch.value;
             Console.WriteLine($"Attempting to change {deviceId} from {status} to {GetToggledStatus(status)}");
             var request = CreateRequest(status);
             await this.http.PostAsync($"devices/{deviceId}/commands", ToStringContent(request));

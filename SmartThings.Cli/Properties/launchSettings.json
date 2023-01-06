@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "SmartThings.Cli": {
+      "commandName": "Project"
+    }
+  }
+}
